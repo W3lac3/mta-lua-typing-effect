@@ -40,40 +40,24 @@ function addTypingEffect(text, leftX, topY, rightX, bottomY, color, alignX, alig
 
     if (not visible) then
         visible = not visible
-        table.insert(TypingEffect, {
-            text = text,
-            leftX = leftX,
-            topY = topY,
-            rightX = rightX or 0,
-            bottomY = bottomY or 0,
-            color = color or tocolor(255, 255, 255),
-            alignX = alignX or 'left',
-            alignY = alignY or 'top',
-            font = font or 'default',
-            index = 0,
-            tick = getTickCount(),
-            speed = speed or 50,
-            endOnFinish = endOnFinish or false
-        })
         addEventHandler('onClientRender', root, drawText)
-    else
-        table.insert(TypingEffect, {
-            text = text,
-            leftX = leftX,
-            topY = topY,
-            rightX = rightX or 0,
-            bottomY = bottomY or 0,
-            color = color or tocolor(255, 255, 255),
-            alignX = alignX or 'left',
-            alignY = alignY or 'top',
-            font = font or 'default',
-            index = 0,
-            tick = getTickCount(),
-            speed = speed or 50,
-            endOnFinish = endOnFinish or false
-        })
     end
 
+    table.insert(TypingEffect, {
+        text = text,
+        leftX = leftX,
+        topY = topY,
+        rightX = rightX or 0,
+        bottomY = bottomY or 0,
+        color = color or tocolor(255, 255, 255),
+        alignX = alignX or 'left',
+        alignY = alignY or 'top',
+        font = font or 'default',
+        index = 0,
+        tick = getTickCount(),
+        speed = speed or 50,
+        endOnFinish = endOnFinish or false
+    })
     return true
 end
 
